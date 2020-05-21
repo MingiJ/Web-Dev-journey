@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birth Year Calculator</title>
+</head>
+<body>
+    
+<center>
+    <h1>Welcome to Jeff's Birth Year Calculator app</h1>
+    <form >
+        <input style="width: 500px; height: 30px;padding-left: 10px;" type="number" name="number" id="number"  placeholder="Type your age...">
+        <input type="button" value="Find Year" id="button">
+        <center><p id="year">Year</p></center>
+    </form>
+</center>
+
+<script>
+    function calculate(){
+        let number = document.getElementById('number').value;
+
+        if(number==''||number == 0){
+            window.alert('Please type in your correct age!')
+            return;
+        }
+        let date = new Date().getFullYear();
+        let birthYear = date - number;
+        document.getElementById('year').style.display = 'block';
+        document.getElementById('year').innerHTML = 'Your birth year is ' + birthYear;
+
+    }
+    document.getElementById('year').style.display = 'none';
+    document.getElementById('button').onclick = function (){
+        calculate();
+    };
+</script>
+</body>
+</html>
